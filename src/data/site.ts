@@ -3,7 +3,7 @@ export const site = {
   wordmark: 'guigas',
   tagline: 'A personal blog about learning, building, and shipping.',
   maxim: 'Each hour of study should ideally leave an artifact. Knowledge that produces nothing tends to disappear.',
-  url: 'https://guigas.com.br',
+  url: 'https://blog.guigas.com.br',
   lang: 'en',
   description:
     'The personal blog of Guilherme Henrique: what I learn, build, and ship — kept as a long-term record of my work and my thinking.',

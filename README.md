@@ -1,7 +1,7 @@
 # guigas — personal blog
 
 A personal blog and artifact factory. The long-term record of what I learn, build, and ship,
-deployed to [guigas.com.br](https://guigas.com.br) via GitHub Pages.
+deployed to [blog.guigas.com.br](https://blog.guigas.com.br) via GitHub Pages.
 
 Built with [Astro](https://astro.build), MDX, and hand-written CSS.
 
@@ -59,23 +59,17 @@ Templates live in [`content-method/templates/`](./content-method/templates).
 The GitHub Actions workflow `.github/workflows/deploy.yml` builds and deploys to GitHub
 Pages on every push to `main`. The `CNAME` file (in `public/`) holds the custom domain.
 
-### DNS for guigas.com.br
+### DNS for blog.guigas.com.br
 
-GitHub Pages serves apex domains via **A records**. In your DNS provider (for the
-`guigas.com.br` apex), point to the Pages IPs:
+Subdomain sites use a single **CNAME record**. In your DNS provider, add:
 
 | Type | Name | Value |
 | --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| AAAA | `@` | `2606:50c0:8000::153` |
-| AAAA | `@` | `2606:50c0:8001::153` |
-| AAAA | `@` | `2606:50c0:8002::153` |
-| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `blog` | `gui-henri.github.io` |
 
-In the GitHub repo settings (**Settings → Pages → Custom domain**), set `guigas.com.br` and
-enable **Enforce HTTPS**. The `CNAME` file keeps the domain in sync across builds.
+The apex (`guigas.com.br`) is left untouched — no A/AAAA records needed.
+
+In the GitHub repo settings (**Settings → Pages → Custom domain**), set `blog.guigas.com.br`
+and enable **Enforce HTTPS**. The `CNAME` file keeps the domain in sync across builds.
 
 > Note: DNS changes can take up to 24–48h to propagate.
