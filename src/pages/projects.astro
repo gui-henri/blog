@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { projects } from '../data/site';
+---
+
+<BaseLayout title="Projects">
+  <div class="wrap">
+    <article class="prose">
+      <h1>Projects</h1>
+      <p>
+        The long-term track record. Open source projects I maintain, small games I build
+        independently, and experiments that shaped the way I work. Each project is an
+        artifact — proof of the maxim.
+      </p>
+    </article>
+
+    {projects.map((project) => (
+      <a class="entry" style="margin-top:1.5rem;" href={project.url} target="_blank">
+        <div>
+          <h2 class="entry-title">{project.name}</h2>
+          <p class="entry-description">{project.description}</p>
+          <div class="entry-tags">
+            <div class="tags">
+              {project.tags.map((tag) => <span class="tag">#{tag}</span>)}
+            </div>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

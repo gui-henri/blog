@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TagChip from '../components/TagChip.astro';
+
+interface Props {
+  title: string;
+  pubDate: Date;
+  tags?: string[];
+}
+
+const { title, pubDate, tags = [] } = Astro.props;
+const formatted = pubDate.toLocaleDateString('en-CA', {
+  year: 'numeric',
+  month: 'long',
+  day: '2-digit',
+});
+---
+
+<BaseLayout title={title}>
+  <article class="article wrap">
+    <header class="article-head">
+      <div class="article-meta">
+        <time datetime={pubDate.toISOString()}>{formatted}</time>
+        <span class="label">note</span>
+      </div>
+      <h1>{title}</h1>
+      <div class="tags" style="margin-top:0.9rem;">
+        {tags.map((tag) => <TagChip tag={tag} />)}
+      </div>
+    </header>
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

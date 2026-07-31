@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import TagChip from './TagChip.astro';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, tags } = post.data;
+const formatted = pubDate.toLocaleDateString('en-CA', {
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+});
+---
+
+<a class="entry" href={`/posts/${post.id}`}>
+  <time class="entry-date" datetime={pubDate.toISOString()}>{formatted}</time>
+  <div>
+    <h2 class="entry-title">{title}</h2>
+    <p class="entry-description">{description}</p>
+    <div class="entry-tags">
+      <div class="tags">
+        {tags.map((tag) => <TagChip tag={tag} />)}
+      </div>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,42 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+const socialLinks = Object.entries(site.social).filter(([, url]) => url);
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>About</h2>
+        <p>{site.tagline}</p>
+        <p class="label">{site.maxim}</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          {site.nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h2>Elsewhere</h2>
+        {socialLinks.length > 0 ? (
+          <ul>
+            {socialLinks.map(([label, url]) => (
+              <li>
+                <a href={url} rel="me" target="_blank">{label}</a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Social links coming soon.</p>
+        )}
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>© {year} {site.name}</span>
+      <span>Built with Astro · Hosted on GitHub Pages</span>
+      <span><a href={`mailto:${site.email}`}>email</a></span>
+    </div>
+  </div>
+</footer>

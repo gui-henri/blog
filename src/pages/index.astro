@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import NoteCard from '../components/NoteCard.astro';
+import { site } from '../data/site';
+
+const posts = (await getCollection('posts'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const notes = (await getCollection('notes'))
+  .filter((note) => !note.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
+---
+
+<BaseLayout>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Hello, I'm {site.name.split(' ')[0]}.</h1>
+      <p>{site.tagline}</p>
+      <p class="maxim">"{site.maxim}"</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2 class="label">Essays</h2>
+      </div>
+      {posts.length > 0 ? (
+        posts.map((post) => <PostCard post={post} />)
+      ) : (
+        <p>The first essay is being written.</p>
+      )}
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2 class="label">Notes</h2>
+      </div>
+      {notes.length > 0 ? (
+        notes.map((note) => <NoteCard note={note} />)
+      ) : (
+        <p>Nothing yet — small things land here often.</p>
+      )}
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="About">
+  <div class="wrap">
+    <article class="prose">
+      <h1>About</h1>
+
+      <p>
+        I'm {site.name}. I build software for a living and I build things for the sake of
+        building on my own time. This blog is the long-term record of both: the things I
+        study, the things I create, and the way I think while doing it.
+      </p>
+
+      <h2>The maxim</h2>
+
+      <blockquote>
+        "Each hour of study should ideally leave an artifact. Knowledge that produces nothing
+        tends to disappear."
+      </blockquote>
+
+      <p>
+        I learned the hard way that passive learning evaporates. Reading, watching, and even
+        completing exercises fade fast if nothing survives them. So I follow a simple rule:
+        <strong> every hour of study ends with an artifact</strong> — a note, a sketch, a post,
+        a small piece of code, a finished game.
+      </p>
+
+      <h2>What lives here</h2>
+      <ul>
+        <li>
+          <strong>Essays</strong> — long-form writing where I internalize complex topics.
+          Writing about something is how I actually learn it.
+        </li>
+        <li>
+          <strong>Notes</strong> — small, frequent artifacts. A lesson, an observation, a
+          decision, a tiny win. They ship fast on purpose.
+        </li>
+        <li>
+          <strong>Projects</strong> — the open source work and the small games I make and
+          maintain on my own.
+        </li>
+      </ul>
+
+      <h2>Elsewhere</h2>
+      <p>
+        This site is the source of truth. From here, content is repurposed into shorter forms
+        on other networks — so an essay becomes a thread, a post, a video. Everything points
+        back here, and this points back to my other work.
+      </p>
+      <ul>
+        <li><a href="https://github.com/gui-henri">github.com/gui-henri</a></li>
+        <li><a href="/rss.xml">RSS feed</a></li>
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+      </ul>
+    </article>
+  </div>
+</BaseLayout>
