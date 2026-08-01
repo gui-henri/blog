@@ -1,6 +1,6 @@
 export const site = {
   name: 'Guilherme Henrique',
-  wordmark: 'guigas',
+  wordmark: 'Guigas',
   tagline: 'A personal blog about learning, building, and shipping.',
   maxim: 'Each hour of study should ideally leave an artifact. Knowledge that produces nothing tends to disappear.',
   url: 'https://blog.guigas.com.br',

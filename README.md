@@ -1,4 +1,4 @@
-# guigas — personal blog
+# Guigas — personal blog
 
 A personal blog and artifact factory. The long-term record of what I learn, build, and ship,
 deployed to [blog.guigas.com.br](https://blog.guigas.com.br) via GitHub Pages.
