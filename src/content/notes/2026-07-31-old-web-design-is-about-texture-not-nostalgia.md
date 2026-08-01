@@ -2,7 +2,7 @@
 title: "Old-web design is about texture, not nostalgia"
 pubDate: 2026-07-31
 tags: [design, web]
-draft: false
+draft: true
 ---
 
 Designing this blog I tried to reach the old web without being retro for retro's sake.
