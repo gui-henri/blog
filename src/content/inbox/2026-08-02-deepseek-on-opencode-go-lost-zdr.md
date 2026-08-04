@@ -26,4 +26,4 @@ This is an good example of how Open Weights models are important, and will guide
 
 Lastly, the OpenCode Go team was a little non-transparent about the changes, and trust is something they can't lose right now. They are able to protect their users against this kinds of situation just by changing providers, but they didn't yet. For now, if you're planning on using the model in anything sensible, you may think twice.
 
-*Edit: they were clearer about the ZDR later. It seems they really tried to solve the situation as soon as it was possible. I still think they could have handled it better, but i give them credits for acknoledging the problem and fix it quick.
+*Edit: they were clearer about the ZDR later. It seems they really tried to solve the situation as soon as it was possible. I still think they could have handled it better, but i give them credits for acknoledging the problem and fix it quick.*
