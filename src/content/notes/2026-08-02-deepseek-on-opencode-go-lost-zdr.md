@@ -4,6 +4,8 @@ createdAt: 2026-08-02
 trigger: trend
 tags: [opencode, deepseek, zdr]
 source: "https://opencode.ai/br/go"
+pubDate: 2026-08-04
+draft: false
 ---
 
 ## The fact
