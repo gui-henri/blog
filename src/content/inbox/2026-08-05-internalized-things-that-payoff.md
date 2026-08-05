@@ -1,4 +1,9 @@
-a
+---
+title: "For later"
+createdAt: 2026-08-04
+trigger: studied
+tags: [vps, self-hosting, learning, dokploy]
+---
 
 This note will be about how we end up internalizing behaviors without even noticing, including at software engineering. Here i talk about how reading the Agile Manifesto shaped my way of thinking, and this behavior payed off when it was displayed in front of the clients.
 
