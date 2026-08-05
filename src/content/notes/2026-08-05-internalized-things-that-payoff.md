@@ -1,8 +1,10 @@
 ---
 title: "Theory is the basis of which experience turns into precision"
-createdAt: 2026-08-04
+createdAt: 2026-08-05
 trigger: studied
 tags: [vps, self-hosting, learning, dokploy]
+pubDate: 2026-08-05
+draft: false
 ---
 
 We end up internalizing behaviors without even noticing, including at software engineering. How many of us had read the Agile Manifesto? How many of us internalized it in our actions and day-to-day? At some point in your carreer, you may be questioned about why you did something the way you did, what were the advantages and disadvantages. Sometimes, the task was really hard and you had to put your thought there, but most of the times, it is not. And in the case it's not, you need to be able to back yourself, because answering why it was done the way it was in a satisfactory way will be very hard. Among other reasons, the main one for this is that you probably were on *autopilot* when you performed the action.
