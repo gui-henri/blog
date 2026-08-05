@@ -1,0 +1,61 @@
+---
+title: "A VPS: the single thing that made me a better Software Engineer"
+createdAt: 2026-08-04
+trigger: studied
+tags: [vps, self-hosting, learning, dokploy]
+description: "This is about one of the times my curiosity to try new things made me a better engineer"
+pubDate: 2026-08-04
+draft: false
+---
+
+## Background of my decision
+
+At my internships, I can say that I was fairly limited on what I was able to do and propose. I tended to contrast myself with a more senior engineer at one of them, who had basically free pass to do everything. I had to ask him to run simple SQL queries in the development database every time I wanted to test new features, while he was able to run multiple data ingestions a day, for example. I never thought that he had forbidden knowledge, and always thought I could do the same if trusted. Someday, I told myself that I would learn it one way or another, and following his steps (I just remember the thing that he would brag about the most), I decided to start renting a VPS.
+
+The rest of this article will be about how great they are, and the findings I made along the way, but I will tell you right away: if you have never tried managing a VPS, I strongly recommend you to try. Also, the focus of this article is my fellow junior devs, so if you're more experienced, you probably will not find this article appealing.
+
+## My uses for a VPS
+
+There's a series of uses for a VPS, the single most important one for me was how much you're able to learn. It was like learning how to use a computer again. We focus so much on which language should we learn, which frameworks to use, but none of this changes how you interact with your computer at a fundamental level. A VPS is just that. It's a whole new model of interacting with a computer, which happens to be the one where most of the world's infra runs on. Besides, there's no better environment to understand the need for technologies like Docker.
+
+My entire development environment has been migrated to it. I'm able to preview my work in real time from my phone, and tell agents to do tasks asynchronously before it was cool. I can host my own version of software that I used to pay for, and the best of the best: I'm able to run Minecraft servers and play with my friends!
+
+## Migrating the development environment to the cloud
+
+My first week was all about migrating my development environment to the VPS. The reason was a simple idea: I wanted to use OpenCode remotely. AI agents are an amazing technology, but I, still to this day, think that we struggle to build the right tools around it. At that moment, people were still letting their Mac open so it wouldn't shut down Claude, which I always thought to be stupid. By running the agent on a VPS, I knew I could just SSH into some project folder, launch OpenCode and let it work. I wouldn't even need to have the code on my notebook anymore!
+
+This also opened possibilities to new ways of testing. Since I work on web projects, I can deploy the application in my own server and test it live. This works better when I'm making an end-to-end feature, but I'm sure it's possible to test other kinds of apps as well (unless you work at native mobile development or something).
+
+## Asynchronous tasks, asynchronous development
+
+For my thesis, I need to process a fairly large amount of files. At that point, I already had my VPS, and didn't think twice of using it. I also made a task tracker app, which sends me messages through Telegram of what I have to do.
+
+I mentioned the AI agents before, but thanks to OpenChamber I'm able to easily put them to work from my phone (I plan on making an article about OpenChamber as well, which boosted my developer experience when using OpenCode). The combination of OpenChamber + VPS gave me an experience I thought I would never have in my life:
+
+1. I told the agent to pick an issue from GitHub. I described it well and specified the implementation details.
+2. I left my house, because I needed to do something else.
+3. The agent sent me a notification telling me it was finished.
+4. I tested the preview from my phone while in the street and approved the changes.
+5. The agent sent a PR to GitHub. Issue done.
+
+This sounds lazy, but it's the kind of automation that makes the hours put into the setup worth it. The time I spared by this is used in other projects (like writing for this blog). I made this for myself, and I will rightfully use any gains in productivity to my benefit!
+
+I will admit, it's a kind of freedom I didn't expect to have, and I'm really surprised other people don't usually try to do similar things. I have so many colleagues that even with the best AI models and tooling, are not as productive as me, the guy using only cheap, open weights models. They are addicted to such a level to the slop-machine, that they forgot the possibilities computers bring when used to their full potential.
+
+## Multiplayer with my friends
+
+I remember being a kid trying to play Minecraft with my friends. Yes, there's a lot of ways of doing this, and hosting yourself is one of them. My friends are able to enter my world at the time they want, and easily bring their friends too. It's easy to host Foundry VTT or Terraria, or any game server.
+
+This is for my inner child, more than anything. Playing with my friends without any headaches is a dream coming true.
+
+## List of things I'm not paying (or using) anymore
+
+- Cursor: it has cloud agents, but I don't need those. I have most of the functionality in my server.
+- S3: I just use Min.IO from now on, at least for my personal stuff.
+- Multiplayer hosting: the server is strong enough to run Minecraft or Terraria.
+- BaaS products: I self-host Convex or PocketBase when I'm trying a new project.
+- Never again using Docker on Windows
+
+## Conclusion
+
+It's past midnight now, and after this (overly) long article, I hope you're able to understand the things that make having a VPS something special. To me, it's the first step to bridge the gap between a Software Developer and a Software Engineer.
