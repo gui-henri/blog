@@ -1,6 +1,6 @@
 ---
 title: "Picture-in-Picture"
 createdAt: 2026-08-12
-trigger: practice
+trigger: built
 tags: [graphs, practice, learning, golang, go]
 ---
