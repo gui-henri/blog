@@ -1,7 +1,7 @@
 ---
 title: "Graph: the data structure of the century"
 createdAt: 2026-08-12
-trigger: practice
+trigger: studied
 tags: [graphs, practice, learning, golang, go]
 ---
 
