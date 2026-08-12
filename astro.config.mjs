@@ -13,8 +13,8 @@ export default defineConfig({
     shikiConfig: {
       theme: 'github-light',
       wrap: false,
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex],
     },
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
   },
 });
