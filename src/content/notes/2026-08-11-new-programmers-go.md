@@ -1,7 +1,7 @@
 ---
 title: "New programmers should use Go"
 createdAt: 2026-08-12
-pubDate: 2026-07-31
+pubDate: 2026-08-12
 trigger: practice
 tags: [graphs, practice, learning, golang, go]
 ---
