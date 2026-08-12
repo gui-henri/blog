@@ -1,7 +1,6 @@
 ---
-title: "New programmers should use Go"
+title: "Graph: the data structure of the century"
 createdAt: 2026-08-12
-pubDate: 2026-07-31
 trigger: practice
 tags: [graphs, practice, learning, golang, go]
 ---
