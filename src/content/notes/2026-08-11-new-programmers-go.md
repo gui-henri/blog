@@ -1,8 +1,8 @@
 ---
-title: "New programmers should use Go"
+title: "Go is the best language to learn programming as a beginner"
 createdAt: 2026-08-12
 pubDate: 2026-08-12
-trigger: practice
+trigger: built
 tags: [graphs, practice, learning, golang, go]
 ---
 
