@@ -1,30 +1,30 @@
 ---
 title: "Implementing a Graph: a Go + Raylib example"
 tags: [graphs, practice, learning, golang, go]
-description: "A simple graph library and an example of it's use."
+description: "A simple graph library and an example of its use."
 pubDate: 2026-08-12
 draft: false
 ---
 
-Many progressing fields of actuality, including AI, borrowed ideas from a simple mathematical structure: the Graph. This note is about how one can be constructed in Go and showed using Raylib. The goal is to create a simple foundation, which can be built upon until we arrive at a robust library capable of representing and implementing neural networks.
+Many fields of modern technology, including AI, have borrowed ideas from a simple mathematical structure: the graph. This note is about how one can be constructed in Go and visualized using Raylib. The goal is to create a simple foundation that can be built upon until we arrive at a robust library capable of representing and implementing neural networks.
 
 ## What is a Graph
 
-Visually, a Graph can be represented like the image bellow:
+Visually, a graph can be represented like the image below:
 
 ![Simple Graph](http://blog.guigas.com.br/graph.png "Simple Graph")
 
-Where the nodes are displayed as circles and the edges are shown as lines connecting the nodes. In it's most pure form, a Graph is just a collection of nodes and edges, representend by the following formula:
+In its most basic form, a graph is just a collection of nodes and edges, represented by the following formula:
 
 $$
 G = (V, E)
 $$
 
-Where $V$ are the nodes (or vertices ) and $E$ are the edges (${v_1, v_2}$) connecting the nodes. For our case, a node can have any property associated to it.
+Where $V$ represents the nodes (or vertices) and $E$ represents the edges (${v_1, v_2}$) connecting the nodes. For our case, a node can have any property associated with it.
 
 ## The (very) simple implementation of a Graph
 
-There are many ways of implementing a Graph, but for the sake of simplicity, we will only use simple structs:
+There are many ways of implementing a graph, but for the sake of simplicity, we will only use simple structs:
 
 ```go
 type Node struct {
@@ -42,13 +42,13 @@ type Graph struct {
 }
 ```
 
-See that the Graph itself is a set of nodes, and the nodes contain a list of edges pointing from them to other nodes. This comes with tradeoffs (a node doesn't know the edges pointing to itself, and because ```nodes``` is a set, it will be harder to iterate over it), but also has a relatively low memory footprint.
+See that the graph itself is a set of nodes, and the nodes contain a list of edges pointing from them to other nodes. This comes with trade-offs (a node doesn't know the edges pointing to itself, and because `nodes` is a set, it will be harder to iterate over it), but it also has a relatively low memory footprint.
 
-Note that we also have a ```label``` and a ```data``` fields on the node, which hold metadata about itself. ```label``` is the key of the node in the ```nodes``` map inside ```Graph```, and it's stored so we can easily reference. To any other type of data, we store it in it's own separate map, so the node can hold any value. Some functions to easily create graphs, it's nodes and it's node's edges were also created.
+Note that we also have `label` and `data` fields on the node, which hold metadata about it. `label` is the key of the node in the `nodes` map inside `Graph`, and it is stored so we can easily reference it. For any other type of data, we store it in its own separate map, so the node can hold any value. Some functions to easily create graphs, their nodes, and their nodes' edges were also created.
 
 ## Example of application
 
-Using Raylib, we can create a bare minimum application that draws the Graph. Initially, a graph was created and were added two nodes with random positions, colors and speed into it. We also added an edge comming from the first node to the second.
+Using Raylib, we can create a bare-minimum application that draws the graph. Initially, a graph was created, and two nodes with random positions, colors, and speeds were added to it. We also added an edge coming from the first node to the second.
 
 ```go
 g := Graph{}
@@ -59,7 +59,7 @@ InitRandomNode(&g, "n2", defaultRadius, maxSpeed, minSpeed, colors)
 g.CreateEdge("n1", "n2")
 ```
 
-Them we convert the set into a list. This is done to keep a consistent drawing order later. Since Go set ordering is random, ranging over a set with a simple for loop would not be consistent.
+Then we convert the set into a list. This is done to keep a consistent drawing order later. Since Go map ordering is random, ranging over a map with a simple `for` loop would not be consistent.
 
 ```go
 for _, v := range g.nodes {
@@ -67,9 +67,9 @@ for _, v := range g.nodes {
 }
 ```
 
-> The code above could output  ```["n1", "n2"]``` in one frame and ```["n2", "n1"]``` in other. This can cause the nodes to constantly "switch" who is on top when they're overlapping.
+> The code above could output `["n1", "n2"]` in one frame and `["n2", "n1"]` in another. This can cause the nodes to constantly "switch" which one is on top when they're overlapping.
 
-In the sequence, after some logic to add new nodes when a node collide with the window borders and create an edge to the closest node to the new node, we can finally draw them using Raylib:
+Next, after some logic to add new nodes when a node collides with the window borders and create an edge to the closest node to the new node, we can finally draw them using Raylib:
 
 ```go
 rl.BeginDrawing()
@@ -100,12 +100,12 @@ for _, v := range nodeArray {
 rl.EndDrawing()
 ```
 
-Note that we first iterate over all edges (which also means iterating over all nodes) and them iterate again to draw just the nodes themselfs. This is done because we want the nodes to be on top of all edges, and since the nodes don't know the edges pointing to them, they may be drawn after the node, hence being on top of it.
+Note that we first iterate over all edges (which also means iterating over all nodes) and then iterate again to draw just the nodes themselves. This is done because we want the nodes to be on top of all edges, and since the nodes don't know the edges pointing to them, an edge may be drawn after a node, hence being rendered on top of it.
 
 ## Results and future
 
-Bellow, you can see a video of the resulting application, with some logic to keep spawning nodes when a collision ocours:
+Below, you can see a video of the resulting application, with some logic to keep spawning nodes when a collision occurs:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1uosJwUWn6k?si=w0fO2btAaeqGXxDL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-The main limitation now is the fact that a node doesn't know the edges pointing to it, which will be important to fix later on. I plan on making this library robust by using it to implement famous papers, like the Djikstra famous shortest-path algorithm. Whenever the need for a new feature arrive (specially when dealing with more complex papers), it will be implemented.
+The main limitation now is the fact that a node doesn't know the edges pointing to it, which will be important to fix later on. I plan on making this library robust by using it to implement famous algorithms and papers, such as Dijkstra's famous shortest-path algorithm. Whenever the need for a new feature arises (especially when dealing with more complex papers), it will be implemented.
